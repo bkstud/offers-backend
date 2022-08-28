@@ -1,10 +1,11 @@
 const express = require('express')
+const handler = require('../handler/offer')
+
 var router = express.Router()
 
-router.get('/', function (req, res) {
-    // console.log(router.mountpath)
-    res.send('/api/v1/offer endpoint')
-})
+router.get('/', handler.getAllOffersHandler)
+router.get('/:id', handler.getOfferByIdHandler)
+router.post('/create', handler.createOfferHandler)
 
 
 module.exports = router

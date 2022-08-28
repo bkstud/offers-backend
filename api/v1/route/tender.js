@@ -5,7 +5,10 @@ var router = express.Router()
 
 router.get('/', handler.getAllTendersHandler)
 router.get('/:id', handler.getTenderByIdHandler)
-router.post('/create', handler.createTenderHandler)
+router.get('/actual', handler.getAllTendersHandler)
+router.get('/finished', handler.getAllTendersHandler)
+
+router.post('/new', handler.createTenderHandler)
 
 
 module.exports = router

@@ -5,7 +5,9 @@ var router = express.Router()
 
 router.get('/', handler.getAllOffersHandler)
 router.get('/:id', handler.getOfferByIdHandler)
-router.post('/create', handler.createOfferHandler)
+router.get('/finished/tender_id', handler.getOfferByIdHandler)
+
+router.post('/new/:tender_id', handler.createOfferHandler)
 
 
 module.exports = router

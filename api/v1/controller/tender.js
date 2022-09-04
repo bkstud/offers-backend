@@ -16,7 +16,7 @@ const getTenderById = async (id) => {
     return tenders
 }
 
-const getActualTenders = async() => {
+const getActualTender = async() => {
     const today = DateTime.local().toISO()
     const raw = true
     var whereConditions = {
@@ -45,5 +45,6 @@ const createNewTender = async (tender) => {
 module.exports = {
     getAllTender,
     getTenderById,
-    createNewTender
+    createNewTender,
+    getActualTender,
 }

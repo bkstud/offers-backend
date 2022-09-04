@@ -1,8 +1,15 @@
 const Controller = require('../controller/tender');
 
 const getAllTendersHandler = (req, res) => {
-    console.log(Controller.getAllTender)
     Controller.getAllTender().then(
+        result => res.status(200).json(result),
+        error => res.status(500).json({"error": error})
+    )
+}
+
+const getActualTendersHandler = (req, res) => {
+    console.log('actual tenders')
+    Controller.getActualTender().then(
         result => res.status(200).json(result),
         error => res.status(500).json({"error": error})
     )
@@ -27,5 +34,6 @@ const createTenderHandler = (req, res) => {
 module.exports = {
     getAllTendersHandler,
     getTenderByIdHandler,
-    createTenderHandler,   
+    createTenderHandler,
+    getActualTendersHandler
 }

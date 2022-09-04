@@ -17,7 +17,12 @@ const getTenderByIdHandler = (req, res) => {
 }
 
 const createTenderHandler = (req, res) => {
-
+    const tender = req.body
+    console.log('tender:=', tender)
+    Controller.createNewTender(tender).then(
+        result => res.status(200).json(result),
+        error => res.status(500).json({"error": error})
+    )
 }
 
 module.exports = {

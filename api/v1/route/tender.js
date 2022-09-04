@@ -1,6 +1,7 @@
 const express = require('express')
 const handler = require('../handler/tender')
 
+// /tender router
 var router = express.Router()
 
 router.get('/', handler.getAllTendersHandler)

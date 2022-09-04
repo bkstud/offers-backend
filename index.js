@@ -5,7 +5,7 @@ const app = express()
 const PORT = 3001
 
 database().then(
-    () => console.log("Initialized database.")
+    console.log("Initialized database.")
 )
 app.use("/api/v1/", router())
 

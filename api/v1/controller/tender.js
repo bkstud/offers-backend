@@ -13,7 +13,7 @@ const getTenderById = async (id) => {
         raw: raw,
         where: {"id": {[Op.eq]: id}}
     })
-    return tenders    
+    return tenders
 }
 
 const getActualTenders = async() => {
@@ -37,12 +37,13 @@ const getActualTenders = async() => {
 
 
 
-const createNewTender = (offer) => {
-    
+const createNewTender = async (tender) => {
+    return await Tender.create(tender)
 }
 
 
 module.exports = {
     getAllTender,
     getTenderById,
+    createNewTender
 }

@@ -8,11 +8,10 @@ const getAllTendersHandler = (req, res) => {
 }
 
 const getActualTendersHandler = (req, res) => {
-    console.log('actual tenders')
     Controller.getActualTender().then(
         result => res.status(200).json(result),
         error => res.status(500).json({"error": error})
-    )
+    ).catch(reason=>{console.log(reason)})
 }
 
 const getTenderByIdHandler = (req, res) => {

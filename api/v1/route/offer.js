@@ -7,7 +7,7 @@ router.get('/', handler.getAllOffersHandler)
 router.get('/:id', handler.getOfferByIdHandler)
 router.get('/finished/tender_id', handler.getOfferByIdHandler)
 
-router.post('/new/:tender_id', handler.createOfferHandler)
+router.post('/new/', handler.createOfferHandler)
 
 
 module.exports = router

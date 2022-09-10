@@ -17,7 +17,7 @@ const getTenderById = async (id) => {
     return tenders
 }
 
-const getActualTender = async() => {
+const getActualTender = async({id}) => {
     const today = DateTime.local().toISO()
     const raw = true
     var whereConditions = {
@@ -27,6 +27,9 @@ const getActualTender = async() => {
         begin: {
             [Op.lte]: today
         },
+    }
+    if(id) {
+        whereConditions["id"] = id
     }
     const tenders = await Tender.findAll(
     {

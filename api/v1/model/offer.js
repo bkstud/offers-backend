@@ -15,6 +15,10 @@ const offerSchema = {
         type: DataTypes.DATE,
         allowNull: false
     },
+    TenderId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
 
 }
 const initModel = (sequelize) => {

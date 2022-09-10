@@ -1,5 +1,4 @@
 const {DataTypes, Model} = require('sequelize');
-const {Offer} = require('./offer')
 
 class Tender extends Model {}
 

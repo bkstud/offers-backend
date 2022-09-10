@@ -17,7 +17,7 @@ const getTenderById = async (id) => {
     return tenders
 }
 
-const getActualTender = async({id}) => {
+const getActualTender = async(id) => {
     const today = DateTime.local().toISO()
     const raw = true
     var whereConditions = {

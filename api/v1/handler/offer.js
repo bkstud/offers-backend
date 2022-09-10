@@ -24,9 +24,9 @@ const createOfferHandler = (req, res) => {
         return
     }
 
-    TenderController.getActualTender({id: offer.TenderId}).then(
+    TenderController.getActualTender(id=offer.TenderId).then(
         result => {
-            if(result.length == 0){
+            if(result.length == 0) {
                 res.status(400).json({"error": "Tender given by Offer.TenderId is not actual."})
                 return
             } else {

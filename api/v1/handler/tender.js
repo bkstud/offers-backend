@@ -1,4 +1,5 @@
 const Controller = require('../controller/tender');
+const OfferController = require('../controller/offer');
 
 const getAllTendersHandler = (req, res) => {
     Controller.getAllTender().then(
@@ -29,6 +30,25 @@ const getTenderByIdHandler = (req, res) => {
     ).catch(reason=>{console.log(reason)})
 }
 
+const getTenderResultHandler = (req, res) => {
+    const id = req.params.id;
+    Controller.getFinishedTender(id).then(
+        result => {
+            if(result.length == 0) {
+                res.status(400).json({"error": "Tender given by id is not finished."})
+                return
+            } else {
+                let tender = result[0]
+                OfferController.getOffersForFinishedTender(tender).then(
+                    offers => {res.status(200).json(offers)},
+                    error => res.status(500).json({"error": error})
+                ).catch(reson => {console.error(reson)})
+            }
+        },
+        error => res.status(500).json({"error": error})
+    )
+}
+
 const createTenderHandler = (req, res) => {
     const tender = req.body;
     Controller.createNewTender(tender).then(
@@ -43,4 +63,5 @@ module.exports = {
     createTenderHandler,
     getActualTendersHandler,
     getFinishedTendersHandler,
+    getTenderResultHandler,
 }

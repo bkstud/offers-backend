@@ -8,7 +8,7 @@ router.get('/', handler.getAllTendersHandler)
 router.get('/details/:id', handler.getTenderByIdHandler)
 router.get('/actual', handler.getActualTendersHandler)
 router.get('/finished', handler.getFinishedTendersHandler)
-
+router.get('/results/:id', handler.getTenderResultHandler)
 router.post('/new', handler.createTenderHandler)
 
 

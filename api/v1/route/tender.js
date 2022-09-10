@@ -7,7 +7,7 @@ var router = express.Router()
 router.get('/', handler.getAllTendersHandler)
 router.get('/details/:id', handler.getTenderByIdHandler)
 router.get('/actual', handler.getActualTendersHandler)
-router.get('/finished', handler.getAllTendersHandler)
+router.get('/finished', handler.getFinishedTendersHandler)
 
 router.post('/new', handler.createTenderHandler)
 

@@ -14,6 +14,13 @@ const getActualTendersHandler = (req, res) => {
     ).catch(reason=>{console.log(reason)})
 }
 
+const getFinishedTendersHandler = (req, res) => {
+    Controller.getFinishedTender().then(
+        result => res.status(200).json(result),
+        error => res.status(500).json({"error": error})
+    ).catch(reason=>{console.log(reason)})
+}
+
 const getTenderByIdHandler = (req, res) => {
     const id = req.params.id;
     Controller.getTenderById(id).then(
@@ -34,5 +41,6 @@ module.exports = {
     getAllTendersHandler,
     getTenderByIdHandler,
     createTenderHandler,
-    getActualTendersHandler
+    getActualTendersHandler,
+    getFinishedTendersHandler,
 }

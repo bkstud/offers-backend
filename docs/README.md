@@ -16,7 +16,7 @@ Użytkownicy powinni posiadać odpowiednie role oraz uprawnienia, które dostarc
 <br><br>
 
 <h1>Wymagania systemowe i funkcjonalne</h1>
-<li> Aplikacja ma realizować architekture REST API, MVC.
+<li> Aplikacja ma realizować architekture REST API, MVC. <br>
 Wymagania funkcjonalne:
 <li> Aplikacja powinna automatycznie dostrzec zakończenie aktualnego przetargu i od tego momentu wyświetlać go w zakładce zakończone
 <li> Aplikacja powinna nie pozwolić użytkownikowi na złożenie oferty do zakończonego przetargu
@@ -24,7 +24,10 @@ Wymagania funkcjonalne:
 <li> Aplikacja powinna informować użytkownika o sukcesie lub porażce wykonanej akcji takiej jak dodawanie przetargu/oferty wyświetlanie informacji w przypadku np. błędu po stronie serwera backendowego.
 <li> Aplikacja powinna zabronić tworzenia przetargów z pustymi-wymaganymi z punktu widzenia biznesu polami np. budżetem.
 
-Bazy danych powinny być przechowywane po stronie serwera 
+Baza danych:
+<li>Bazy danych powinny być przechowywane po stronie REST serwera
+<li>Modele obiektów model przetargu oraz oferty w schemacie jeden do wielu:<br>
+<img src="./models.png" alt="alt text" title="image Title" />
 
 <h1>Analiza zagadnienia i jego modelowanie</h1>
 <h1>Podsumowanie</h1>

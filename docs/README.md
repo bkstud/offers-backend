@@ -30,5 +30,14 @@ Baza danych:
 <img src="./models.png" alt="alt text" title="image Title" />
 
 <h1>Analiza zagadnienia i jego modelowanie</h1>
+<h2>Warstwy aplikacji backendowej</h2>
+<img src="./backendflow.png" alt="alt text" title="image Title" />
+<li>1. Użytkownik wykonuje zapytanie restowe, które zostaję obsłużone przez serwer (np. GET /api/v1/tender/actual)
+<li>2. Odpowiednio zdefiniowana ścieżka woła handler, który obsłuży zapytanie restowe z jego json body i ew. parametrami ścieżki
+<li>3. Handler używając metod controllerów żąda informacji np. o aktualnych przetargach
+<li>4. Controller wykożystuje metody ORMowe dostępne dla konkretnych modeli zdefiniowane przez bibliotekę <b>Sequelize</b> (np. findaAll z dodatkowymi kondycjami o czasie zakończenia przetargu)
+<li>5. Controller zwraca Promise żądanej metody ORMowej
+<li>6. Handler czeka na dane (lub bład/wyjątek) i odpowiednio je obsługuję zawierając logikę biznesową.
+<li>7-8. Handler przygotowuję odpowiedne dane w formacie json razem ze status HTTP informującym o sukcesie lub błedzie operacji.
 <h1>Podsumowanie</h1>
 </span>

@@ -47,7 +47,7 @@ Baza danych:
  </ul>
 <li> Controller
  <ul>
- <li> hooki useEffect wykonujące requesty aby pobrać dane z backendu przy wyświetleniu odpowiedniej strony
+ <li> hooki useEffect wykonujące requesty, aby pobrać dane z backendu przy wyświetleniu odpowiedniej strony
  <li> metody wykonujące np POST do backendu dla button onClick w formularzu tworzenia przetargu
  </ul>
 <li> Model
@@ -61,7 +61,7 @@ Baza danych:
 Wykorzystywana jest biblioteka <b>luxon</b> do operacji związanych z lokalnym czasem i jego formatem.
 <h2>Backend:</h2>
 <li> Biblioteka ORMowa Sequelize z bazą danych SQLite
-<li> Wykorzystanie biblioteki express jako główna technologia dostarczająca server obsługę zapytań rozszerzona o bibliotekę 'body-parser' potrzebną do obsługi json body.
+<li> Wykorzystanie biblioteki express jako główna technologia dostarczająca server obsługę zapytań rozszerzona o bibliotekę 'body-parser' potrzebną do obsługi JSON body.
 <h3>Dostępne endpointy:</h3>
  <b>/api/v1</b>
  <ul>
@@ -81,7 +81,7 @@ Wykorzystywana jest biblioteka <b>luxon</b> do operacji związanych z lokalnym c
   </ul>  
 </ul> 
 <h2>Frontend:</h2>
-Customowe hooki uzupełniające listę przetargów np. poprzez GET /api/v1/tender/actual oraz posiadające wiadomości informujące użytkownika o statusie wykonania RESTowego zapytania (np. ładowanie, bład serwera). Wykorzystywane są przez komponenty do załadowania danych z serwera backendowego.
+Customowe hooki uzupełniające listę przetargów np. poprzez GET /api/v1/tender/actual oraz posiadające wiadomości informujące użytkownika o statusie wykonania RESTowego zapytania (np. ładowanie, błąd serwera). Wykorzystywane są przez komponenty do załadowania danych z serwera backendowego.
 
 ```javascript
     const [tenders, setTenders] = useState([]);
@@ -93,5 +93,7 @@ Customowe hooki uzupełniające listę przetargów np. poprzez GET /api/v1/tende
 ```
 
 <h1>Podsumowanie</h1>
+Aplikacja spełnia założone wymagania funkcjonalne w ramach rozszerzenia, można byłoby dodać obsługę logowania, panel admina (odpowiednie role). Stronę warto by było rozszerzyć o ładniejszy wygląd graficzny.
+Problematyczna okazało się formatowanie czasu np. dla/z formularza — aby był ten sam UTC dla backendu i frontentu w sensie operacji, ale wyświetlany dla użytkownika w lokalnym czasie.
 </span>
 
